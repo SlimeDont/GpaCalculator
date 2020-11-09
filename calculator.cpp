@@ -7,7 +7,7 @@ class Functypes {
 public:
 int i,x,z,d;
 std::string note, depoinput;;        
-std::vector <std::string> input = {"AA","BB","CC"};
+std::vector <std::string> input = {};
 std::vector <std::string> deponotes = {"AA","BA","BB","CB","CC","DC","DD","FD","FF"};
 std::vector <double> equalitynotes = {4,3.5,3,2.5,2,1.5,1,0.5,0.0};
 std::vector <double> deposit;
