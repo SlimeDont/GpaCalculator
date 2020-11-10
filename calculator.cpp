@@ -3,6 +3,18 @@
 #include <vector>
 #include <numeric>
 
+class Student {
+public:
+double st_spa;
+std::string st_name;
+
+int student_info() {
+std::cout << "Please type your name:" << std::endl;
+std::cin >> st_name;
+std::cout << "Type your first SPA" << std::endl;
+std::cin >> st_spa;
+}};
+
 class Functypes {
 public:
 int i,x,z,d;
@@ -11,35 +23,41 @@ std::vector <std::string> input = {};
 std::vector <std::string> deponotes = {"AA","BA","BB","CB","CC","DC","DD","FD","FF"};
 std::vector <double> equalitynotes = {4,3.5,3,2.5,2,1.5,1,0.5,0.0};
 std::vector <double> deposit;
-double summ;
-};
-
+double summ, second_spa;
 
 int calculatefunc() {
-Functypes get;
 std::cout << "How many classes do you taking ? " << std::endl;
-std::cin >> get.z;
+std::cin >> z;
 std::cout << "Please type your notes!" << std::endl;
-for(get.d = 0; get.d < get.z; get.d++) {
-std::cin >> get.depoinput;
-get.input.push_back(get.depoinput);
+for(d = 0; d < z; d++) {
+std::cin >> depoinput;
+input.push_back(depoinput);
 }
-  for(get.i = 0; get.i < get.input.size(); get.i++) {
-  get.note = get.input[get.i];
-    for(get.x = 0; get.x < get.deponotes.size(); get.x++){
-    std::string deponote = get.deponotes[get.x];            
-      if(get.note == deponote) {
-      get.deposit.push_back(get.equalitynotes[get.x]);
+  for(i = 0; i < input.size(); i++) {
+  note = input[i];
+    for(x = 0; x < deponotes.size(); x++){
+    std::string deponote = deponotes[x];            
+      if(note == deponote) {
+      deposit.push_back(equalitynotes[x]);
       }
   }
-~get.i,get.d,
-get.x,get.z;
+~i,d,
+x,z;
 }
-get.summ = std::accumulate(get.deposit.begin(), get.deposit.end(), decltype(get.deposit)::value_type(0));
-std::cout << "Your GPA is:" << get.summ / get.input.size();
-}  
-
+summ = std::accumulate(deposit.begin(), deposit.end(), decltype(deposit)::value_type(0));
+second_spa = summ / input.size();
+}};
 
 int main() {
-calculatefunc();
+Student student;
+Functypes func;
+student.student_info();
+func.calculatefunc();
+std::cout << "Your name:" << student.st_name << std::endl;
+std::cout << "Your first SPA:" << student.st_spa << std::endl;
+std::cout << "Your second SPA" << func.second_spa << std::endl;
+std::cout << "Your GPA is: " << (student.st_spa+func.second_spa) / 2 << std::endl;
 }
+
+     
+    
